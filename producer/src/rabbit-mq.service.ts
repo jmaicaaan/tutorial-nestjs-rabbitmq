@@ -8,6 +8,6 @@ export class RabbitMQService {
   ) {}
 
   public send(pattern: string, data: any) {
-    return this.client.send(pattern, data).subscribe();
+    return this.client.send(pattern, data).toPromise();
   }
 }
