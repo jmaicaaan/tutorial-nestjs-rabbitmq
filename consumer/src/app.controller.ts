@@ -16,7 +16,7 @@ export class AppController {
   @MessagePattern('rabbit-mq-producer')
   public async execute(@Payload() data: any, @Ctx() context: RmqContext) {
     const channel = context.getChannelRef();
-    const orginalMessage = context.getMesssage();
+    const orginalMessage = context.getMessage();
 
     console.log('data', data);
     await this.appService.mySuperLongProcessOfUser(data);
